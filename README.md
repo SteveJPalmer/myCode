@@ -2,7 +2,7 @@
 
 Whenever I learn something or uncover a great technique:bulb:, I capture it via either...  
 - :pushpin:snippets/templates within my personal code library  
-- :clipboard:tech cribsheets 
+- :clipboard:tech crib-sheets 
 
 *(have literally hundreds of crib-sheets & thousands of code examples across the multitude of technologies I follow*).
 
