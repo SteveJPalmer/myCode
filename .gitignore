@@ -1,0 +1,9 @@
+# node modules
+node_modules
+# WebStorm
+.idea
+# Log files & log folder
+logs
+*.log
+#mac
+.DS_store
