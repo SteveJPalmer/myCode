@@ -22,7 +22,7 @@
     /* native solution */
     var oScript = document.createElement('script');									  //create script node & dd attrs
     oScript.type = 'text/javascript';
-    oScript.src  = 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js';
+    oScript.src  = 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js';
 
     var oHead   = document.getElementsByTagName('head').item(0);      //add to end of <head> tag
     oHead.appendChild(oScript);																				//add node to DOM
@@ -34,6 +34,7 @@
     function loadScript(url, callback) {
       var script = document.createElement("script")
       script.type = "text/javascript";
+      script.src = url;
 
       if (script.readyState) { //IE
         script.onreadystatechange = function () {
@@ -48,7 +49,6 @@
         };
       }
 
-      script.src = url;
       document.getElementsByTagName("head")[0].appendChild(script);
     }
 
@@ -91,6 +91,8 @@
     });
   </script>
 
+
+
   <!--[if lt IE 10]>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
@@ -112,6 +114,26 @@
   </script>
 
 
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script>
+    /* Modernizr add test for mobile */
+    Modernizr.addTest('ismobile', function() {
+      return window.matchMedia("(max-width: 479px)").matches
+    });
+  </script>
+
+  <script>
+    if(Modernizr.ismobile) {
+      console.info('ismobile: true');
+    }
+    else {
+      console.info('ismobile: false');
+    };
+  </script>
+
+  
 </head>
 <body>
   <h1>Dynamic Loading of Scripts: </h1>
