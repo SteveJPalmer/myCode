@@ -15,7 +15,8 @@
       <a class="brand" href="#">Quick Start</a>
       <ul class="nav">
         <li><a ui-sref="route1">Route 1</a></li>
-        <li><a ui-sref="route2">Route 2</a></li>
+        <li><a ui-sref="route2({myId:123})">Route 2 (with param - console)</a></li>
+        <li><a ui-sref="route2({myId:123, myParam2:'Bob'})">Route 2 (with multi params - uncomment ctrl code)</a></li>
       </ul>
     </div>
   </div>
@@ -53,8 +54,13 @@
           })
           
         .state('route2', {
-            url: "/route2",
-            templateUrl: "route2.html"
+            url: "/route2/:myId",
+            //url: "/route2/?myId&myParam2",   //multi params version,  or "/route2/:myId/:myParam2"
+            templateUrl: "route2.html",
+            controller: function($scope, $stateParams) {
+              $scope.myParams = $stateParams.myId;
+              console.log($stateParams);
+          }
         })
           .state('route2.list', {
               url: "/list",
