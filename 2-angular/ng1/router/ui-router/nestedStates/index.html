@@ -54,8 +54,13 @@
           })
           
         .state('route2', {
-            url: "/route2/:myId",
-            //url: "/route2/?myId&myParam2",   //multi params version,  or "/route2/:myId/:myParam2"
+            url: "/route2",
+            /* alternatve techniqies */
+            //url: "/route2/?myId&myParam2",   //or multi params version,  or "/route2/:myId/:myParam2"
+            //or
+            //params: {											   //or via separate param prop
+            //  myId: null
+            //},
             templateUrl: "route2.html",
             controller: function($scope, $stateParams) {
               $scope.myParams = $stateParams.myId;
