@@ -27,27 +27,6 @@ var users = [
   }
 ];
 
-//standard syntax - plain fn provided, fn used directly
-console.log('example: standard syntax - plain fn provided');
-res = _.filter(users, function(user) {
-          return user.age > 21;
-        });
-console.log('>result: ' + JSON.stringify(res) );  //Steve & Kylie
-
-//shorthand - using a property string (truthy values returned)
-console.log('example: shorthand - using a property string');
-res =_.filter(users, 'is_premium');
-console.log('>result: ' + JSON.stringify(res) );  //Kylie
-
-//shorthand - using property name & value (returns matches)
-console.log('example: shorthand - using a property name & value pair');
-res =_.filter(users, ['name','Kylie']);
-console.log('>result: ' + JSON.stringify(res) );  //Kylie
-
-//shorthand - using object (returns containing matches)
-console.log('example: shorthand - using object');
-res =_.filter(users, {name:'Kylie'});
-console.log('>result: ' + JSON.stringify(res) );  //Kylie
 
 
 // **
@@ -55,12 +34,11 @@ console.log('>result: ' + JSON.stringify(res) );  //Kylie
 // **
 
 
-// ** example: _.property     (Predicate & Iteratee shorthand pass as: 'string' )
+// ** _.property  - creates a fn to return the value of a property
 // **
-console.log('example: _.property');
 var f = _.property('name');
 res = f({name: 'Steve'});
-console.log('>result: ' + res);  //'Steve'
+console.log('>>_.property result 1: ' + res);  //'Steve'
 
 // ** example: _.matchesProperty     (Predicate & Iteratee shorthand pass as: [string, value] )
 // **
